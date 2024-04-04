@@ -39,6 +39,7 @@ def parse_args():
     parser.add_argument('--envmap', type=str, default='data/irrmaps/mud_road_puresky_4k.hdr')
     parser.add_argument('--log_freq', type=int, default=100)
     parser.add_argument('--gd_scale', type=int, default=100)
+    parser.add_argument('--learn_light', type=eval, default=True, choices=[True, False])
 
     args = parser.parse_args()
     args.kd_min = [0.0, 0.0, 0.0, 0.0]  # Limits for kd
