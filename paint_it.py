@@ -131,7 +131,8 @@ def main(args, guidance):
         (f"a DSLR photo of {args.identity}", "best quality, high quality, extremely detailed, good geometry"))
 
     # load obj and read uv information
-    args.obj_path = os.path.join(OBJAVERSE_PATH, args.objaverse_id, 'mesh.obj')
+    if args.obj_path is None:
+        args.obj_path = os.path.join(OBJAVERSE_PATH, args.objaverse_id, 'mesh.obj')
     obj_f_uv, obj_v_uv, obj_f, obj_v = load_obj_uv(obj_path=args.obj_path, device=device)
 
     # initialize template mesh
